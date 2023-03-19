@@ -33,11 +33,16 @@ def main():
 
         r = input("Ratio (in px, same number will be user for both width and height): ")
 
-        xhair = XHair(r=int(r))
-        xhair.use(imgpath=f"crosshairs/{chosen}")
+        xhair = XHair()
+        xhair.setimg(imgpath=f"crosshairs/{chosen}", x=int(r))
+        xhair.run()
 
+def mvme():
+    xhair = XHair()
+    xhair.setimg(imgpath=f"crosshairs/arrow.png", x=15)
+    xhair.run(mvmepath="crosshairs/arrowRED.png")
 
 
 
 if __name__ == '__main__':
-    main()
+    mvme()
